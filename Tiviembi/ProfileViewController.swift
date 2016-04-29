@@ -11,9 +11,15 @@ import Stormpath
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Stormpath.sharedSession.me { (account, error) -> Void in
+            if let account = account {
+                self.profileTitle.title = account.username
+            }
+        }
         // Do any additional setup after loading the view.
     }
 

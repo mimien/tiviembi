@@ -46,6 +46,23 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="hRp-kY-m2x">
+            <objects>
+                <navigationController id="v6Y-a2-nrq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="g6e-hi-xW4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q9R-ds-Fj8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="I3h-L0-efp" kind="relationship" relationship="rootViewController" id="wWq-5z-Oll"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABy-Tb-of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="1031"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="hsd-wc-jRS">
             <objects>
@@ -61,17 +78,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="user" id="xgz-Nb-Ek6"/>
                     <navigationItem key="navigationItem" title="Profile" id="Sl5-4Z-tZe">
-                        <barButtonItem key="backBarButtonItem" title="Logout" id="xkI-ya-fXF">
-                            <connections>
-                                <action selector="Logout:" destination="I3h-L0-efp" id="ecl-gc-JYA"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="TCB-bn-UOV"/>
+                        <barButtonItem key="rightBarButtonItem" image="more" id="TCB-bn-UOV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileTitle" destination="Sl5-4Z-tZe" id="xP1-2r-nU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbf-3O-dpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="1077"/>
+            <point key="canvasLocation" x="1544" y="1031"/>
         </scene>
         <!--Library-->
         <scene sceneID="wg7-f3-ORb">
@@ -207,28 +222,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="1Vw-Ri-hdZ" id="Nzk-fd-EF9"/>
                         <outlet property="passwordTextField" destination="fDd-4L-uvv" id="zZE-js-eWY"/>
-                        <segue destination="oav-22-jy6" kind="show" identifier="login" id="mga-KI-eHc"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="login" id="xd1-rL-krn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1p-vC-3pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1409" y="-6"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ssv-Lb-XVs">
-            <objects>
-                <navigationController id="oav-22-jy6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0G-Bf-xcm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="49e-Tb-3d3" kind="relationship" relationship="rootViewController" id="D6B-ce-euy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DPl-De-2tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-713" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -244,8 +243,8 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="cph-Js-Bw0" kind="relationship" relationship="viewControllers" id="Ut0-Dz-LJO"/>
-                        <segue destination="I3h-L0-efp" kind="relationship" relationship="viewControllers" id="77D-mZ-kax"/>
+                        <segue destination="v6Y-a2-nrq" kind="relationship" relationship="viewControllers" id="nua-a4-a1A"/>
+                        <segue destination="fMH-Qx-LMH" kind="relationship" relationship="viewControllers" id="0ql-gj-7Sh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -266,7 +265,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iw1-HH-8fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1409" y="763"/>
+            <point key="canvasLocation" x="-1513" y="763"/>
         </scene>
         <!--Register-->
         <scene sceneID="osb-aA-x57">
@@ -355,7 +354,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itc-on-rSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="763"/>
+            <point key="canvasLocation" x="-837" y="763"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="P45-bv-oNw">
+            <objects>
+                <navigationController id="fMH-Qx-LMH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7Cb-jd-8yg"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NZf-0Z-cR0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cph-Js-Bw0" kind="relationship" relationship="rootViewController" id="9wZ-7h-vu9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owv-Bm-d6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-133" y="820"/>
         </scene>
         <!--Tops-->
         <scene sceneID="MWM-Hr-DMb">
@@ -371,15 +387,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tops" image="tops" id="0Uz-Uk-vbu"/>
+                    <navigationItem key="navigationItem" title="Tops" id="DeY-Qm-4FR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hx6-je-WCm"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGd-Dj-FbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16" y="921"/>
+            <point key="canvasLocation" x="-133" y="1557"/>
         </scene>
     </scenes>
     <resources>
         <image name="activity" width="30" height="30"/>
         <image name="library" width="30" height="30"/>
+        <image name="more" width="30" height="30"/>
         <image name="tops" width="30" height="30"/>
         <image name="user" width="30" height="30"/>
     </resources>
