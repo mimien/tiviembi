@@ -1,0 +1,65 @@
+//
+//  LoginViewController.swift
+//  Tiviembi
+//
+//  Created by Emilio Cornejo on 06/04/16.
+//  Copyright © 2016 Emilio Cornejo. All rights reserved.
+//
+
+import UIKit
+import Stormpath
+
+class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func login(sender: AnyObject) {
+        Stormpath.sharedSession.login(emailTextField.text!, password: passwordTextField.text!, completionHandler: onSuccess)
+    }
+    
+    @IBAction func loginWithFacebook(sender: AnyObject) {
+    }
+    
+    @IBAction func loginWithGoogle(sender: AnyObject) {
+    }
+
+    @IBAction func resetPassword(sender: AnyObject) {
+        Stormpath.sharedSession.resetPassword(emailTextField.text!) { (success, error) -> Void in
+            if let error = error {
+                self.showAlert(withTitle: "Error", message: error.localizedDescription)
+            } else {
+                self.showAlert(withTitle: "Success", message: "Password reset email sent!")
+            }
+        }
+    }
+    
+    func onSuccess(success: Bool, error: NSError?) {
+        if let error = error {
+            showAlert(withTitle: "Error", message: error.localizedDescription)
+        }
+        else {
+            performSegueWithIdentifier("login", sender: self)
+        }
+    }
+    
+    @IBOutlet weak var loginWithGoogle: UIButton!
+}
+// Helper extension to display alerts easily.
+extension UIViewController {
+    func showAlert(withTitle title: String, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+}

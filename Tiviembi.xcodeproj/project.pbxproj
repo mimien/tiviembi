@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494A5F243F1D5E66EA0003DD /* Pods_Tiviembi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470F3DEB485BEFC5F5F56327 /* Pods_Tiviembi.framework */; };
 		8812B3811CB57A4000D72673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812B3801CB57A4000D72673 /* AppDelegate.swift */; };
-		8812B3831CB57A4000D72673 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812B3821CB57A4000D72673 /* FirstViewController.swift */; };
-		8812B3851CB57A4000D72673 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812B3841CB57A4000D72673 /* SecondViewController.swift */; };
 		8812B3881CB57A4000D72673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8812B3861CB57A4000D72673 /* Main.storyboard */; };
 		8812B38A1CB57A4000D72673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8812B3891CB57A4000D72673 /* Assets.xcassets */; };
 		8812B38D1CB57A4000D72673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8812B38B1CB57A4000D72673 /* LaunchScreen.storyboard */; };
+		8812B3981CB58CA800D72673 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812B3971CB58CA800D72673 /* LoginViewController.swift */; };
+		88FE6DF41CC9356C00717E5C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470F3DEB485BEFC5F5F56327 /* Pods_Tiviembi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiviembi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8812B37D1CB57A4000D72673 /* Tiviembi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiviembi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8812B3801CB57A4000D72673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8812B3821CB57A4000D72673 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8812B3841CB57A4000D72673 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8812B3871CB57A4000D72673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8812B3891CB57A4000D72673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8812B38C1CB57A4000D72673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8812B38E1CB57A4000D72673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8812B3971CB58CA800D72673 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B00937FD6B4EEE69B4B58E65 /* Pods-Tiviembi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiviembi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tiviembi/Pods-Tiviembi.debug.xcconfig"; sourceTree = "<group>"; };
+		C8412694ADC25A719B4CBAA4 /* Pods-Tiviembi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiviembi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tiviembi/Pods-Tiviembi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494A5F243F1D5E66EA0003DD /* Pods_Tiviembi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69575FC998F0D761AB6AA575 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B00937FD6B4EEE69B4B58E65 /* Pods-Tiviembi.debug.xcconfig */,
+				C8412694ADC25A719B4CBAA4 /* Pods-Tiviembi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E57AE158F6A045DD30684F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				470F3DEB485BEFC5F5F56327 /* Pods_Tiviembi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8812B3741CB57A4000D72673 = {
 			isa = PBXGroup;
 			children = (
 				8812B37F1CB57A4000D72673 /* Tiviembi */,
 				8812B37E1CB57A4000D72673 /* Products */,
+				69575FC998F0D761AB6AA575 /* Pods */,
+				6E57AE158F6A045DD30684F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,12 +81,12 @@
 			isa = PBXGroup;
 			children = (
 				8812B3801CB57A4000D72673 /* AppDelegate.swift */,
-				8812B3821CB57A4000D72673 /* FirstViewController.swift */,
-				8812B3841CB57A4000D72673 /* SecondViewController.swift */,
+				8812B3971CB58CA800D72673 /* LoginViewController.swift */,
 				8812B3861CB57A4000D72673 /* Main.storyboard */,
 				8812B3891CB57A4000D72673 /* Assets.xcassets */,
 				8812B38B1CB57A4000D72673 /* LaunchScreen.storyboard */,
 				8812B38E1CB57A4000D72673 /* Info.plist */,
+				88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */,
 			);
 			path = Tiviembi;
 			sourceTree = "<group>";
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8812B3911CB57A4000D72673 /* Build configuration list for PBXNativeTarget "Tiviembi" */;
 			buildPhases = (
+				A9D4870D3E55B4CD79CE08D3 /* Check Pods Manifest.lock */,
 				8812B3791CB57A4000D72673 /* Sources */,
 				8812B37A1CB57A4000D72673 /* Frameworks */,
 				8812B37B1CB57A4000D72673 /* Resources */,
+				AC6AA4A29A482798E2B9D464 /* Embed Pods Frameworks */,
+				F4C8781ADE101E206A6341F8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,14 +161,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A9D4870D3E55B4CD79CE08D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC6AA4A29A482798E2B9D464 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiviembi/Pods-Tiviembi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C8781ADE101E206A6341F8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiviembi/Pods-Tiviembi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8812B3791CB57A4000D72673 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8812B3851CB57A4000D72673 /* SecondViewController.swift in Sources */,
+				8812B3981CB58CA800D72673 /* LoginViewController.swift in Sources */,
+				88FE6DF41CC9356C00717E5C /* RegisterViewController.swift in Sources */,
 				8812B3811CB57A4000D72673 /* AppDelegate.swift in Sources */,
-				8812B3831CB57A4000D72673 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,9 +327,12 @@
 		};
 		8812B3921CB57A4000D72673 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B00937FD6B4EEE69B4B58E65 /* Pods-Tiviembi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tiviembi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itesm.Tiviembi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -263,9 +341,12 @@
 		};
 		8812B3931CB57A4000D72673 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8412694ADC25A719B4CBAA4 /* Pods-Tiviembi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tiviembi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itesm.Tiviembi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,6 +372,7 @@
 				8812B3931CB57A4000D72673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

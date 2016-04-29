@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let APIURL = "https://tiviembi.herokuapp.com"
+        Stormpath.sharedSession.configuration.APIURL = NSURL(string: APIURL)!
         return true
     }
 
