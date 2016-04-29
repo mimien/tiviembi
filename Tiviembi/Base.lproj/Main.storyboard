@@ -49,7 +49,7 @@
         <!--Profile-->
         <scene sceneID="hsd-wc-jRS">
             <objects>
-                <viewController id="I3h-L0-efp" sceneMemberID="viewController">
+                <viewController id="I3h-L0-efp" customClass="ProfileViewController" customModule="Tiviembi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZVY-e9-cNb"/>
                         <viewControllerLayoutGuide type="bottom" id="BgY-L8-AuC"/>
@@ -60,10 +60,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="user" id="xgz-Nb-Ek6"/>
+                    <navigationItem key="navigationItem" title="Profile" id="Sl5-4Z-tZe">
+                        <barButtonItem key="backBarButtonItem" title="Logout" id="xkI-ya-fXF">
+                            <connections>
+                                <action selector="Logout:" destination="I3h-L0-efp" id="ecl-gc-JYA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="TCB-bn-UOV"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbf-3O-dpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="650" y="1010"/>
+            <point key="canvasLocation" x="690" y="1077"/>
         </scene>
         <!--Library-->
         <scene sceneID="wg7-f3-ORb">

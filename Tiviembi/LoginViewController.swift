@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginWithFacebook(sender: AnyObject) {
+        Stormpath.sharedSession.login(socialProvider: .Facebook, completionHandler: onSuccess)
     }
     
     @IBAction func loginWithGoogle(sender: AnyObject) {
