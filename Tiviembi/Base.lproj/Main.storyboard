@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="718" y="-316"/>
         </scene>
         <!--Library-->
         <scene sceneID="wg7-f3-ORb">
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="334"/>
+            <point key="canvasLocation" x="718" y="322"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -98,14 +98,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="Wcl-Ys-1t7" kind="relationship" relationship="viewControllers" id="0ql-gj-7Sh"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Wcl-Ys-1t7" kind="relationship" relationship="viewControllers" id="0ql-gj-7Sh"/>
                         <segue destination="9gT-6r-rM0" kind="relationship" relationship="viewControllers" id="nua-a4-a1A"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-22" y="-20"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ATl-Jv-40D">
