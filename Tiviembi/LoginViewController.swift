@@ -13,11 +13,14 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loadingIndicator.hidden = true
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,6 +28,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
+        loadingIndicator.hidden = false
+        loadingIndicator.startAnimating()
+        
         Stormpath.sharedSession.login(emailTextField.text!, password: passwordTextField.text!, completionHandler: onSuccess)
     }
     
@@ -52,10 +58,15 @@ class LoginViewController: UIViewController {
         else {
             performSegueWithIdentifier("login", sender: self)
         }
+        loadingIndicator.stopAnimating()
+        loadingIndicator.hidden = true
     }
     
     @IBOutlet weak var loginWithGoogle: UIButton!
+    
+    
 }
+
 // Helper extension to display alerts easily.
 extension UIViewController {
     func showAlert(withTitle title: String, message: String?) {

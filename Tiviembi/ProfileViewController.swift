@@ -33,4 +33,18 @@ class ProfileViewController: UIViewController {
         dismissViewControllerAnimated(false, completion: nil)
 
     }
+    @IBAction func moreOptions(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+//        alert.popoverPresentationController?.sourceView = sender.superview
+//        alert.popoverPresentationController?.sourceRect = sender.frame
+        let logOut = UIAlertAction(title: "Log out", style: .Destructive) { (action) -> Void in
+            Stormpath.sharedSession.logout()
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in })
+        alert.addAction(logOut)
+        alert.addAction(cancel)
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }
