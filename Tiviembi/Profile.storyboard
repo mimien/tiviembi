@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v6Y-a2-nrq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="hRp-kY-m2x">
+            <objects>
+                <navigationController id="v6Y-a2-nrq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="g6e-hi-xW4"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q9R-ds-Fj8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="I3h-L0-efp" kind="relationship" relationship="rootViewController" id="wWq-5z-Oll"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABy-Tb-of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="827"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="hsd-wc-jRS">
+            <objects>
+                <viewController id="I3h-L0-efp" customClass="ProfileViewController" customModule="Tiviembi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZVY-e9-cNb"/>
+                        <viewControllerLayoutGuide type="bottom" id="BgY-L8-AuC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Frz-GR-BBX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="xgz-Nb-Ek6"/>
+                    <navigationItem key="navigationItem" title="Profile" id="Sl5-4Z-tZe">
+                        <barButtonItem key="rightBarButtonItem" image="more" id="TCB-bn-UOV">
+                            <connections>
+                                <action selector="moreOptions:" destination="I3h-L0-efp" id="k28-L3-V3a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profileTitle" destination="Sl5-4Z-tZe" id="xP1-2r-nU5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbf-3O-dpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="1569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="more" width="30" height="30"/>
+        <image name="user" width="30" height="30"/>
+    </resources>
+</document>

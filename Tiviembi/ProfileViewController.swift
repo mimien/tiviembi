@@ -27,22 +27,20 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func Logout(sender: AnyObject) {
-        Stormpath.sharedSession.logout()
-        
-        dismissViewControllerAnimated(false, completion: nil)
 
-    }
     @IBAction func moreOptions(sender: AnyObject) {
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
 //        alert.popoverPresentationController?.sourceView = sender.superview
 //        alert.popoverPresentationController?.sourceRect = sender.frame
+        
+        // Alert actions
         let logOut = UIAlertAction(title: "Log out", style: .Destructive) { (action) -> Void in
             Stormpath.sharedSession.logout()
             self.dismissViewControllerAnimated(false, completion: nil)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in })
+        
         alert.addAction(logOut)
         alert.addAction(cancel)
         presentViewController(alert, animated: true, completion: nil)
