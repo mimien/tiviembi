@@ -10,6 +10,7 @@ import UIKit
 
 class TopsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var currentTop: Top?
     @IBOutlet weak var topsCollectionView: UICollectionView!
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     
@@ -42,19 +43,23 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.title.text = Tops.arrayOfTops[indexPath.item].description
-        cell.title.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         cell.categories.text = Tops.arrayOfTops[indexPath.item].icons()
         cell.layer.borderColor = UIColor.lightGrayColor().CGColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 4
         return cell
     }
-    
-    
+        
     // MARK: - UICollectionViewDelegate protocol
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let nextVC = segue.destinationViewController as? DisplayTopViewController {
+            nextVC.top = currentTop!
+        }
+    }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        // handle tap events
+        currentTop = Tops.arrayOfTops[indexPath.item]
+        performSegueWithIdentifier("displayTop", sender: self)
         print("You selected cell #\(indexPath.item)!")
     }
 }

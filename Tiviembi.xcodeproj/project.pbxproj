@@ -19,6 +19,7 @@
 		889091DB1CD343F500441BF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889091DA1CD343F500441BF6 /* ProfileViewController.swift */; };
 		88A52F291CD7EB01003F02F5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A52F281CD7EB01003F02F5 /* Profile.storyboard */; };
 		88A52F2D1CD7EBAE003F02F5 /* Tops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A52F2B1CD7EBAE003F02F5 /* Tops.storyboard */; };
+		88A97F9E1CD92E66002E2FD9 /* DisplayTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A97F9D1CD92E66002E2FD9 /* DisplayTopViewController.swift */; };
 		88B3002E1CD83E7900F69C52 /* Tops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B3002D1CD83E7900F69C52 /* Tops.swift */; };
 		88B300351CD8580D00F69C52 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B300341CD8580D00F69C52 /* ItemTableViewCell.swift */; };
 		88D768401CD83626006186ED /* Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D7683F1CD83626006186ED /* Top.swift */; };
@@ -41,6 +42,7 @@
 		889091DA1CD343F500441BF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		88A52F281CD7EB01003F02F5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		88A52F2C1CD7EBAE003F02F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tops.storyboard; sourceTree = "<group>"; };
+		88A97F9D1CD92E66002E2FD9 /* DisplayTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTopViewController.swift; sourceTree = "<group>"; };
 		88B3002D1CD83E7900F69C52 /* Tops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tops.swift; sourceTree = "<group>"; };
 		88B300341CD8580D00F69C52 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		88D7683F1CD83626006186ED /* Top.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				88A52F2B1CD7EBAE003F02F5 /* Tops.storyboard */,
 				886E5ECC1CD414870042EC77 /* TopsViewController.swift */,
 				88681FE21CD81D3D00EC6924 /* CreateATopViewController.swift */,
+				88A97F9D1CD92E66002E2FD9 /* DisplayTopViewController.swift */,
 			);
 			name = Tops;
 			sourceTree = "<group>";
@@ -163,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				88E8F8A81CD7BCEB00A745F1 /* Login.storyboard */,
-				88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */,
 				8812B3971CB58CA800D72673 /* LoginViewController.swift */,
+				88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				88FE6DF41CC9356C00717E5C /* RegisterViewController.swift in Sources */,
 				889091DB1CD343F500441BF6 /* ProfileViewController.swift in Sources */,
 				88B3002E1CD83E7900F69C52 /* Tops.swift in Sources */,
+				88A97F9E1CD92E66002E2FD9 /* DisplayTopViewController.swift in Sources */,
 				8812B3811CB57A4000D72673 /* AppDelegate.swift in Sources */,
 				88D768401CD83626006186ED /* Top.swift in Sources */,
 			);
