@@ -94,7 +94,6 @@
                     <navigationItem key="navigationItem" title="Tops" id="DeY-Qm-4FR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hx6-je-WCm">
                             <connections>
-                                <action selector="createTop:" destination="cph-Js-Bw0" id="rhK-ld-TXK"/>
                                 <segue destination="JnP-Jn-AsP" kind="presentation" id="EH9-An-TPG"/>
                             </connections>
                         </barButtonItem>

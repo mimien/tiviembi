@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Tops {
+public class Tops {
     static var arrayOfTops: [Top] = []
 }

@@ -17,7 +17,8 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var topsTableView: UITableView!
     
-    var items: Int = 3
+    var items: [String] = []
+    var itemsCount: Int = 3
     let reuseIdentifier = "itemCell"
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items
+        return itemsCount
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,6 +44,7 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
         let number = (indexPath.row + 1)
         cell.itemTextField.placeholder = "Top \(number)"
         cell.numberLabel.text = "#" + String(number)
+        items.append(cell.itemTextField.text!)
         return cell
     }
     
@@ -51,12 +53,15 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func addItem(sender: AnyObject) {
-        items += 1
+        itemsCount += 1
         topsTableView.reloadData()
     }
     @IBAction func createTop(sender: AnyObject) {
-        let newTop = Top.init(name: nameTextField.text!, categories: (filmSwitch.on, tvSwitch.on, videogameSwitch.on, bookSwitch.on), list: )
+        items = []
+        topsTableView.reloadData()
+        let newTop = Top.init(name: nameTextField.text!, categories: (filmSwitch.on, tvSwitch.on, videogameSwitch.on, bookSwitch.on), list: items)
         Tops.arrayOfTops.append(newTop)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 
