@@ -19,6 +19,9 @@
 		889091DB1CD343F500441BF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889091DA1CD343F500441BF6 /* ProfileViewController.swift */; };
 		88A52F291CD7EB01003F02F5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A52F281CD7EB01003F02F5 /* Profile.storyboard */; };
 		88A52F2D1CD7EBAE003F02F5 /* Tops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A52F2B1CD7EBAE003F02F5 /* Tops.storyboard */; };
+		88B3002E1CD83E7900F69C52 /* Tops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B3002D1CD83E7900F69C52 /* Tops.swift */; };
+		88B300351CD8580D00F69C52 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B300341CD8580D00F69C52 /* ItemTableViewCell.swift */; };
+		88D768401CD83626006186ED /* Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D7683F1CD83626006186ED /* Top.swift */; };
 		88E8F8AA1CD7BCEB00A745F1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E8F8A81CD7BCEB00A745F1 /* Login.storyboard */; };
 		88FE6DF41CC9356C00717E5C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,9 @@
 		889091DA1CD343F500441BF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		88A52F281CD7EB01003F02F5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		88A52F2C1CD7EBAE003F02F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tops.storyboard; sourceTree = "<group>"; };
+		88B3002D1CD83E7900F69C52 /* Tops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tops.swift; sourceTree = "<group>"; };
+		88B300341CD8580D00F69C52 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		88D7683F1CD83626006186ED /* Top.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top.swift; sourceTree = "<group>"; };
 		88E8F8A91CD7BCEB00A745F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		88FE6DF31CC9356C00717E5C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B00937FD6B4EEE69B4B58E65 /* Pods-Tiviembi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiviembi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tiviembi/Pods-Tiviembi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		8812B37F1CB57A4000D72673 /* Tiviembi */ = {
 			isa = PBXGroup;
 			children = (
+				88B3002F1CD850EB00F69C52 /* App */,
 				8812B3801CB57A4000D72673 /* AppDelegate.swift */,
 				8812B38B1CB57A4000D72673 /* LaunchScreen.storyboard */,
 				8812B3861CB57A4000D72673 /* Main.storyboard */,
@@ -120,10 +127,36 @@
 			children = (
 				88A52F2B1CD7EBAE003F02F5 /* Tops.storyboard */,
 				886E5ECC1CD414870042EC77 /* TopsViewController.swift */,
-				88681FE01CD7FC4E00EC6924 /* TopCollectionViewCell.swift */,
 				88681FE21CD81D3D00EC6924 /* CreateATopViewController.swift */,
 			);
 			name = Tops;
+			sourceTree = "<group>";
+		};
+		88B3002F1CD850EB00F69C52 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				88B300311CD8511A00F69C52 /* Models */,
+				88B300301CD850F500F69C52 /* Views */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		88B300301CD850F500F69C52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88681FE01CD7FC4E00EC6924 /* TopCollectionViewCell.swift */,
+				88B300341CD8580D00F69C52 /* ItemTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		88B300311CD8511A00F69C52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88D7683F1CD83626006186ED /* Top.swift */,
+				88B3002D1CD83E7900F69C52 /* Tops.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		88E8F8AC1CD7BD5F00A745F1 /* Login */ = {
@@ -264,11 +297,14 @@
 			files = (
 				88681FE11CD7FC4E00EC6924 /* TopCollectionViewCell.swift in Sources */,
 				88681FE31CD81D3D00EC6924 /* CreateATopViewController.swift in Sources */,
+				88B300351CD8580D00F69C52 /* ItemTableViewCell.swift in Sources */,
 				886E5ECD1CD414870042EC77 /* TopsViewController.swift in Sources */,
 				8812B3981CB58CA800D72673 /* LoginViewController.swift in Sources */,
 				88FE6DF41CC9356C00717E5C /* RegisterViewController.swift in Sources */,
 				889091DB1CD343F500441BF6 /* ProfileViewController.swift in Sources */,
+				88B3002E1CD83E7900F69C52 /* Tops.swift in Sources */,
 				8812B3811CB57A4000D72673 /* AppDelegate.swift in Sources */,
+				88D768401CD83626006186ED /* Top.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
