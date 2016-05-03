@@ -22,4 +22,21 @@ class Top {
     var description: String {
         return "Top \(list.count) \(name)"
     }
+    
+    func icons() -> String {
+        var string: String = ""
+        if categories.0 {
+            string += "🎬"
+        }
+        if categories.1 {
+            string += "📺"
+        }
+        if categories.2 {
+            string += "🎮"
+        }
+        if categories.3 {
+            string += "📚"
+        }
+        return string
+    }
 }

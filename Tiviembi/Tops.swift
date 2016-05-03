@@ -9,5 +9,5 @@
 import Foundation
 
 public class Tops {
-    static var arrayOfTops: [Top] = []
+    static var arrayOfTops: [Top] = [Top.init(name: "Fantasy movies and tv Shows", categories: (true, true, false, false), list: ["The Hobbit", "Narnia", "Alice in wonderland"])]
 }

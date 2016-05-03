@@ -54,8 +54,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ6-zl-Kqm">
-                                                    <rect key="frame" x="29" y="13" width="42" height="21"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Top 20 fantasy games and books" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M8f-CH-W4m">
+                                                    <rect key="frame" x="4" y="4" width="96" height="52"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.088537596166133881" green="0.52536273002624512" blue="0.74991923570632935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎮" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoH-1p-wE2">
+                                                    <rect key="frame" x="8" y="59" width="22" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,16 +70,21 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.03154633620689655" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="xJ6-zl-Kqm" firstAttribute="centerX" secondItem="8jO-p3-1Bi" secondAttribute="centerX" id="9y0-hw-4ku"/>
-                                            <constraint firstItem="xJ6-zl-Kqm" firstAttribute="top" secondItem="8jO-p3-1Bi" secondAttribute="topMargin" constant="5" id="adL-Ab-8Ih"/>
+                                            <constraint firstItem="uoH-1p-wE2" firstAttribute="top" secondItem="M8f-CH-W4m" secondAttribute="bottom" constant="3" id="EzX-DP-I4A"/>
+                                            <constraint firstItem="uoH-1p-wE2" firstAttribute="leading" secondItem="M8f-CH-W4m" secondAttribute="leading" constant="4" id="SpD-qc-I3w"/>
+                                            <constraint firstItem="M8f-CH-W4m" firstAttribute="leading" secondItem="8jO-p3-1Bi" secondAttribute="leadingMargin" constant="-4" id="cRD-Hu-AFC"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="M8f-CH-W4m" secondAttribute="bottom" constant="36" id="jVh-Gz-hrZ"/>
+                                            <constraint firstItem="M8f-CH-W4m" firstAttribute="top" secondItem="8jO-p3-1Bi" secondAttribute="topMargin" constant="-4" id="u15-f9-nEf"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="M8f-CH-W4m" secondAttribute="trailing" constant="-8" id="z7v-ot-Wbr"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="D" destination="xJ6-zl-Kqm" id="EXL-q9-jWo"/>
-                                            <outlet property="title" destination="xJ6-zl-Kqm" id="cAD-dp-FgT"/>
+                                            <outlet property="categories" destination="uoH-1p-wE2" id="ULA-ni-eSG"/>
+                                            <outlet property="title" destination="M8f-CH-W4m" id="rLU-ZO-wX9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -98,6 +110,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="topsCollectionView" destination="Ltq-bn-xVN" id="K2X-mv-1jX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGd-Dj-FbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
