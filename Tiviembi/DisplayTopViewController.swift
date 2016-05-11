@@ -59,18 +59,15 @@ class DisplayTopViewController: UIViewController, UITableViewDelegate, UITableVi
         alert.addAction(cancel)
         
         presentViewController(alert, animated: true, completion: nil)
-        
-//        self.listTableView.editing = !self.listTableView.editing
-//        listTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return top!.get.list.count
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("displayTopCell", forIndexPath: indexPath)
-        let number = top!.get.list.count - indexPath.row
+        let number = 5 - indexPath.row
         cell.textLabel?.text = "#\(number) - " + top!.get.list[number - 1]
         return cell
     }

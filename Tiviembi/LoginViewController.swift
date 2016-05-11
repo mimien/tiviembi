@@ -46,6 +46,9 @@ class LoginViewController: UIViewController {
 //    }
 
     @IBAction func resetPassword(sender: AnyObject) {
+        if emailTextField.text! == "" || !(emailTextField.text?.containsString("@"))! {
+            self.showAlert(withTitle: "Error", message: "Email not valid")
+        }
         Stormpath.sharedSession.resetPassword(emailTextField.text!) { (success, error) -> Void in
             if let error = error {
                 self.showAlert(withTitle: "Error", message: error.localizedDescription)

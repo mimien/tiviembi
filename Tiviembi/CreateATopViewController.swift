@@ -16,19 +16,21 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var categoryPickerView: UIPickerView!
     @IBOutlet weak var topsTableView: UITableView!
     
-    var items: [String] = []
     let reuseIdentifier = "itemCell"
     var selectedCategory = Top.Category.movies
     var isEditMode = false
     var username: String?
     var topIndex: Int?
-    var numberArray: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.endEditing(true)
         
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,49 +90,43 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.itemTextField.placeholder = "Top " + String(number)
         return cell
     }
-//    
-//    func onTextChanged(sender: UITextField) {
-//        let cell = sender.superview! as! ItemTableViewCell
-//        let indexPath = self.topsTableView.indexPathForCell(cell)!
-//        numberArray[indexPath.row] = Int(sender.text!)!
-//    }
-    
 
     @IBAction func saveTop(sender: AnyObject) {
+        var items: [String] = []
         let paths = topsTableView.indexPathsForVisibleRows
+        var noErrors = true
         for path in paths! {
             if path.item == 5 {
                 break
             }
             let cell = topsTableView.cellForRowAtIndexPath(path) as! ItemTableViewCell
+            if cell.itemTextField.text == "" {
+                self.showAlert(withTitle: "Error", message: "Do not leave elements of the top empty")
+                noErrors = false
+                break;
+            }
+         
             items.append(cell.itemTextField.text!)
         }
-        let newTop = Top.init(name: nameTextField.text!, category: selectedCategory, list: items)
-       
-        if isEditMode {
-            if let i = topIndex { if let name = username {
+        if nameTextField.text == "" {
+            self.showAlert(withTitle: "Error", message: "The top must have a name")
+            noErrors = false
+        }
+        if noErrors {
+            let newTop = Top.init(name: nameTextField.text!, category: selectedCategory, list: items)
+            if isEditMode {
+                if let i = topIndex { if let name = username {
                     Tops.map[name]![i] = newTop
+                    }
                 }
-            }
-        } else {
-            if (Tops.map[username!]) == nil {
-                Tops.map[username!] = [newTop]
             } else {
-                Tops.map[username!]!.append(newTop)
+                if (Tops.map[username!]) == nil {
+                    Tops.map[username!] = [newTop]
+                } else {
+                    Tops.map[username!]!.append(newTop)
+                }
             }
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

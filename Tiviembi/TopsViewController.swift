@@ -32,6 +32,7 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidAppear(animated: Bool) {
         Stormpath.sharedSession.me { (account, error) -> Void in
             if let account = account {
+                self.messageLabel.text = "No tops created"
                 self.titleNavigationItem.title = account.username + " tops"
                 self.username = account.username
                 self.topsCollectionView.reloadData()
@@ -43,9 +44,9 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // tell the collection view how many cells to make
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let tops = Tops.map[username] {
-            messageLabel.hidden = tops.count == 0
-            return tops.count
+        if let topsCount = Tops.map[username]?.count {
+            messageLabel.hidden = topsCount != 0
+            return topsCount
         }
         messageLabel.hidden = false
         return 0
@@ -61,6 +62,8 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
             cell.title.text = tops[indexPath.item].description
             cell.title.userInteractionEnabled = false
+            cell.title.textColor = UIColor.init(red: 0.12, green: 0.53, blue: 0.74, alpha: 1.0)
+            cell.title.sizeToFit()
             cell.categories.text = tops[indexPath.item].category.rawValue
             cell.layer.borderColor = UIColor.lightGrayColor().CGColor
             cell.layer.borderWidth = 1
