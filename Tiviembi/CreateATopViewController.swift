@@ -8,24 +8,23 @@
 
 import UIKit
 import Stormpath
-class CreateATopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CreateATopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    @IBOutlet weak var bookSwitch: UISwitch!
-    @IBOutlet weak var videogameSwitch: UISwitch!
-    @IBOutlet weak var tvSwitch: UISwitch!
-    @IBOutlet weak var filmSwitch: UISwitch!
+
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var categoryPickerView: UIPickerView!
     @IBOutlet weak var topsTableView: UITableView!
     
     var items: [String] = []
     var itemsCount: Int = 3
     var username = ""
     let reuseIdentifier = "itemCell"
-    
+    var selectedCategory = Top.Category.movies
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.endEditing(true)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -46,6 +45,27 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+ 
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Top.Category.allValues.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCategory = Top.Category.allValues[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = UIColor.blackColor()
+        pickerLabel.text = Top.Category.allValues[row].rawValue
+        pickerLabel.font = UIFont(name: "System", size: 12)
+        pickerLabel.textAlignment = NSTextAlignment.Center
+        return pickerLabel
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsCount
     }
@@ -78,8 +98,9 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
             items.append(cell.itemTextField.text!)
            
         }
-        let newTop = Top.init(name: nameTextField.text!, categories: (filmSwitch.on, tvSwitch.on, videogameSwitch.on, bookSwitch.on), list: items)
-        print(username)
+        print(selectedCategory)
+        let newTop = Top.init(name: nameTextField.text!, category: selectedCategory, list: items)
+
         if Tops.map[username] == nil {
             Tops.map[username] = [newTop]
         } else {

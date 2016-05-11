@@ -57,16 +57,26 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TopCollectionViewCell
         
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.title.text = Tops.map[username]![indexPath.item].description
-        cell.title.userInteractionEnabled = false
-        cell.categories.text = Tops.map[username]![indexPath.item].icons()
-        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 4
+        if let tops = Tops.map[username] {
+            // Use the outlet in our custom class to get a reference to the UILabel in the cell
+            cell.title.text = tops[indexPath.item].description
+            cell.title.userInteractionEnabled = false
+            cell.categories.text = tops[indexPath.item].category.rawValue
+            cell.layer.borderColor = UIColor.lightGrayColor().CGColor
+            cell.layer.borderWidth = 1
+            cell.layer.cornerRadius = 4
+        }
         return cell
     }
-        
+    
+    func collectionView(collectionView: UICollectionView,
+         layout collectionViewLayout: UICollectionViewLayout,
+                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        return CGSizeMake(screenWidth / 4, 100)
+    }
+    
     // MARK: - UICollectionViewDelegate protocol
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

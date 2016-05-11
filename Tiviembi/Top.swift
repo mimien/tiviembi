@@ -9,13 +9,23 @@
 import Foundation
 
 class Top {
+    enum Category: String {
+        case movies = "🎬 Movies"
+        case tv = "📺 TV Shows"
+        case videogames = "🎮 Videogames"
+        case books = "📚 Books"
+        case sports = "⚽️ Sports"
+        case food = "🍔 Food"
+        
+        static let allValues = [movies, tv, videogames, books, sports, food]
+    }
     var name: String
-    var categories: (Bool, Bool, Bool, Bool) // movies, tv shows, videogames, books
+    var category: Category // movies, tv shows, videogames, books
     var list: [String]
     
-    init(name: String, categories: (Bool, Bool, Bool, Bool), list: [String]) {
+    init(name: String, category: Category, list: [String]) {
         self.name = name
-        self.categories = categories
+        self.category = category
         self.list = list
     }
     
@@ -23,20 +33,24 @@ class Top {
         return "Top \(list.count) \(name)"
     }
     
-    func icons() -> String {
-        var string: String = ""
-        if categories.0 {
-            string += "🎬"
+    func categoryStr() -> String {
+        return "\(icon()) \(category)"
+    }
+    
+    func icon() -> String {
+        switch category {
+        case .movies:
+            return "🎬"
+        case .tv:
+            return "📺"
+        case .videogames:
+            return "🎮"
+        case .books:
+            return "📚"
+        case .sports:
+            return "⚽️"
+        case .food:
+            return "🍔"
         }
-        if categories.1 {
-            string += "📺"
-        }
-        if categories.2 {
-            string += "🎮"
-        }
-        if categories.3 {
-            string += "📚"
-        }
-        return string
     }
 }

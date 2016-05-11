@@ -23,7 +23,7 @@ class DisplayTopViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidAppear(animated: Bool) {
         nameLabel.text = top!.get.name
-        categoriesLabel.text = top!.get.icons()
+        categoriesLabel.text = "\(top!.get.category)"
         listTableView.reloadData()
     }
     
@@ -37,14 +37,21 @@ class DisplayTopViewController: UIViewController, UITableViewDelegate, UITableVi
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         // Alert actions
-        let logOut = UIAlertAction(title: "Delete Top", style: .Destructive) { (action) -> Void in
+        let edit = UIAlertAction(title: "Edit Top", style: .Default) { (action) -> Void in
             Tops.map[self.top!.username]?.removeAtIndex(self.top!.topIndex)
             self.navigationController?.popViewControllerAnimated(true)
         }
+        let delete = UIAlertAction(title: "Delete Top", style: .Destructive) { (action) -> Void in
+            Tops.map[self.top!.username]?.removeAtIndex(self.top!.topIndex)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in })
         
-        alert.addAction(logOut)
+        alert.addAction(edit)
+        alert.addAction(delete)
         alert.addAction(cancel)
+        
         presentViewController(alert, animated: true, completion: nil)
         
 //        self.listTableView.editing = !self.listTableView.editing

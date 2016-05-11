@@ -11,7 +11,6 @@
         <!--Login View Controller-->
         <scene sceneID="8oy-T9-oeU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T1p-vC-3pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jTf-aM-Hv9" customClass="LoginViewController" customModule="Tiviembi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vSl-Zu-oYA"/>
@@ -99,6 +98,7 @@
                         <segue destination="tLx-fD-wjV" kind="show" identifier="login" id="xd1-rL-krn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1p-vC-3pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1417" y="-60"/>
         </scene>
