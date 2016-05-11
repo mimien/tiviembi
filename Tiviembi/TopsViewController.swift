@@ -80,14 +80,26 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - UICollectionViewDelegate protocol
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let nextVC = segue.destinationViewController as? DisplayTopViewController {
-            nextVC.top = CurrentTop(username: username, topIndex: selectedCellIndex)
+        if segue.identifier == "displayTop" {
+            if let nextVC = segue.destinationViewController as? DisplayTopViewController {
+                nextVC.top = CurrentTop(username: username, topIndex: selectedCellIndex)
+            }
+        } else if segue.identifier == "createTop" {
+            if let nextVC = segue.destinationViewController as? CreateATopViewController {
+                nextVC.username = username
+            }
         }
     }
+    
+    @IBAction func createTop(sender: AnyObject) {
+        performSegueWithIdentifier("createTop", sender: self)
+    }
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedCellIndex = indexPath.item
         performSegueWithIdentifier("displayTop", sender: self)
     }
+    
     @IBAction func viewOptions(sender: AnyObject) {
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)

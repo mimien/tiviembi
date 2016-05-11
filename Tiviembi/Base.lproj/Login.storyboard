@@ -21,12 +21,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Vw-Ri-hdZ">
-                                <rect key="frame" x="20" y="192" width="560" height="30"/>
+                                <rect key="frame" x="20" y="180" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ers-Jg-e6R">
-                                <rect key="frame" x="20" y="280" width="560" height="30"/>
+                                <rect key="frame" x="20" y="268" width="560" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="jTf-aM-Hv9" eventType="touchUpInside" id="vkw-85-VOT"/>
@@ -40,26 +40,26 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5iz-0w-bGw">
-                                <rect key="frame" x="290" y="436" width="20" height="20"/>
+                                <rect key="frame" x="290" y="424" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHN-C5-VtI">
-                                <rect key="frame" x="20" y="318" width="560" height="30"/>
+                                <rect key="frame" x="20" y="306" width="560" height="30"/>
                                 <state key="normal" title="Reset Password"/>
                                 <connections>
                                     <action selector="resetPassword:" destination="jTf-aM-Hv9" eventType="touchUpInside" id="pGl-z1-dbE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-gR-xci">
-                                <rect key="frame" x="133.5" y="64" width="333" height="120"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-4L-uvv">
+                                <rect key="frame" x="20" y="218" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-gR-xci">
+                                <rect key="frame" x="150" y="64" width="300" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YCK-gR-xci" secondAttribute="height" multiplier="200:72" id="gKP-Dc-aHt"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-4L-uvv">
-                                <rect key="frame" x="20" y="230" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -69,6 +69,7 @@
                             <constraint firstItem="1Vw-Ri-hdZ" firstAttribute="leading" secondItem="QYc-yt-e9j" secondAttribute="leadingMargin" id="HM2-ZB-pix"/>
                             <constraint firstItem="ers-Jg-e6R" firstAttribute="leading" secondItem="QYc-yt-e9j" secondAttribute="leadingMargin" id="MZv-az-4jl"/>
                             <constraint firstItem="MHN-C5-VtI" firstAttribute="leading" secondItem="QYc-yt-e9j" secondAttribute="leadingMargin" id="NuC-l7-QI6"/>
+                            <constraint firstItem="YCK-gR-xci" firstAttribute="width" secondItem="QYc-yt-e9j" secondAttribute="width" multiplier="0.5" id="P6G-oa-pmz"/>
                             <constraint firstItem="fDd-4L-uvv" firstAttribute="top" secondItem="1Vw-Ri-hdZ" secondAttribute="bottom" constant="8" id="RFB-Pl-zSb"/>
                             <constraint firstItem="YCK-gR-xci" firstAttribute="height" secondItem="QYc-yt-e9j" secondAttribute="height" multiplier="0.2" id="UNy-N7-Vrp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fDd-4L-uvv" secondAttribute="trailing" id="Vii-Lz-CI7"/>
@@ -87,6 +88,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="UNy-N7-Vrp"/>
                                 <exclude reference="YgQ-jt-zm7"/>
                             </mask>
                         </variation>

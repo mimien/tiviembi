@@ -53,4 +53,21 @@ class Top {
             return "🍔"
         }
     }
+    
+    func categoryIndex() -> Int {
+        switch category {
+        case .movies:
+            return 0
+        case .tv:
+            return 1
+        case .videogames:
+            return 2
+        case .books:
+            return 3
+        case .sports:
+            return 4
+        case .food:
+            return 5
+        }
+    }
 }

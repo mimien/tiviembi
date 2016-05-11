@@ -8,37 +8,41 @@
 
 import UIKit
 import Stormpath
+
 class CreateATopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
 
+    @IBOutlet weak var titleNavigationItem: UINavigationItem!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var categoryPickerView: UIPickerView!
     @IBOutlet weak var topsTableView: UITableView!
     
     var items: [String] = []
-    var itemsCount: Int = 3
-    var username = ""
     let reuseIdentifier = "itemCell"
     var selectedCategory = Top.Category.movies
+    var isEditMode = false
+    var username: String?
+    var topIndex: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.endEditing(true)
         
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        Stormpath.sharedSession.me { (account, error) -> Void in
-            if let account = account {
-                self.username = account.username
-                print(self.username)
-            }
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if isEditMode {
+            let top = CurrentTop(username: username!, topIndex: topIndex!)
+            titleNavigationItem.title = "Edit top"
+            nameTextField.text = top.get.name
+            categoryPickerView.selectRow(top.get.categoryIndex(), inComponent: 0, animated: false)
+            
+        }
     }
     
     @IBAction func dismissView(sender: AnyObject) {
@@ -67,46 +71,48 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsCount
+        return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! ItemTableViewCell
         let number = (indexPath.row + 1)
-        cell.itemTextField.placeholder = "Top \(number)"
+        if isEditMode {
+            if let i = topIndex { if let name = username {
+                cell.itemTextField.text = Tops.map[name]![i].list[indexPath.row]
+                }
+            }
+        } else {
+            cell.itemTextField.placeholder = "Top \(number)"
+        }
         cell.numberLabel.text = "#" + String(number)
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-    
-    @IBAction func addItem(sender: AnyObject) {
-        itemsCount += 1
-        topsTableView.reloadData()
-    }
-    @IBAction func createTop(sender: AnyObject) {
+
+    @IBAction func saveTop(sender: AnyObject) {
         let paths = topsTableView.indexPathsForVisibleRows
         for path in paths! {
-            print(path.item)
-            print(itemsCount)
-            if path.item == itemsCount {
+            if path.item == 10 {
                 break
             }
             let cell = topsTableView.cellForRowAtIndexPath(path) as! ItemTableViewCell
             items.append(cell.itemTextField.text!)
-           
         }
-        print(selectedCategory)
         let newTop = Top.init(name: nameTextField.text!, category: selectedCategory, list: items)
-
-        if Tops.map[username] == nil {
-            Tops.map[username] = [newTop]
+       
+        if isEditMode {
+            if let i = topIndex { if let name = username {
+                    Tops.map[name]![i] = newTop
+                }
+            }
         } else {
-            Tops.map[username]!.append(newTop)
+            if (Tops.map[username!]) == nil {
+                Tops.map[username!] = [newTop]
+            } else {
+                Tops.map[username!]!.append(newTop)
+            }
         }
-        print(Tops.map[username]!)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

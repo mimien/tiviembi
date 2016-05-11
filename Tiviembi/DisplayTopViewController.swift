@@ -32,14 +32,20 @@ class DisplayTopViewController: UIViewController, UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let nextVC = segue.destinationViewController as? CreateATopViewController {
+            nextVC.username = top!.username
+            nextVC.topIndex = top!.topIndex
+            nextVC.isEditMode = true
+        }
+    }
     // MARK: - UITableViewDataSource
     @IBAction func edit(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         // Alert actions
         let edit = UIAlertAction(title: "Edit Top", style: .Default) { (action) -> Void in
-            Tops.map[self.top!.username]?.removeAtIndex(self.top!.topIndex)
-            self.navigationController?.popViewControllerAnimated(true)
+            self.performSegueWithIdentifier("editTop", sender: self)
         }
         let delete = UIAlertAction(title: "Delete Top", style: .Destructive) { (action) -> Void in
             Tops.map[self.top!.username]?.removeAtIndex(self.top!.topIndex)
