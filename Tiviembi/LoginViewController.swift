@@ -20,7 +20,9 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         loadingIndicator.hidden = true
     }
-    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,18 +30,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
+        self.view.endEditing(true)
         loadingIndicator.hidden = false
         loadingIndicator.startAnimating()
         
         Stormpath.sharedSession.login(emailTextField.text!, password: passwordTextField.text!, completionHandler: onSuccess)
     }
-    
-    @IBAction func loginWithFacebook(sender: AnyObject) {
-        Stormpath.sharedSession.login(socialProvider: .Facebook, completionHandler: onSuccess)
-    }
-    
-    @IBAction func loginWithGoogle(sender: AnyObject) {
-    }
+//    
+//    @IBAction func loginWithFacebook(sender: AnyObject) {
+//        Stormpath.sharedSession.login(socialProvider: .Facebook, completionHandler: onSuccess)
+//    }
+//    
+//    @IBAction func loginWithGoogle(sender: AnyObject) {
+//        Stormpath.sharedSession.login(socialProvider: .Google, completionHandler: onSuccess)
+//    }
 
     @IBAction func resetPassword(sender: AnyObject) {
         Stormpath.sharedSession.resetPassword(emailTextField.text!) { (success, error) -> Void in
@@ -56,6 +60,7 @@ class LoginViewController: UIViewController {
             showAlert(withTitle: "Error", message: error.localizedDescription)
         }
         else {
+            passwordTextField.text = ""
             performSegueWithIdentifier("login", sender: self)
         }
         loadingIndicator.stopAnimating()

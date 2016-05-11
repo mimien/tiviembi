@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Stormpath
 class CreateATopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var bookSwitch: UISwitch!
@@ -19,11 +19,22 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var items: [String] = []
     var itemsCount: Int = 3
+    var username = ""
     let reuseIdentifier = "itemCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.endEditing(true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        Stormpath.sharedSession.me { (account, error) -> Void in
+            if let account = account {
+                self.username = account.username
+                print(self.username)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +55,6 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
         let number = (indexPath.row + 1)
         cell.itemTextField.placeholder = "Top \(number)"
         cell.numberLabel.text = "#" + String(number)
-        items.append(cell.itemTextField.text!)
         return cell
     }
     
@@ -57,10 +67,25 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
         topsTableView.reloadData()
     }
     @IBAction func createTop(sender: AnyObject) {
-        items = []
-        topsTableView.reloadData()
+        let paths = topsTableView.indexPathsForVisibleRows
+        for path in paths! {
+            print(path.item)
+            print(itemsCount)
+            if path.item == itemsCount {
+                break
+            }
+            let cell = topsTableView.cellForRowAtIndexPath(path) as! ItemTableViewCell
+            items.append(cell.itemTextField.text!)
+           
+        }
         let newTop = Top.init(name: nameTextField.text!, categories: (filmSwitch.on, tvSwitch.on, videogameSwitch.on, bookSwitch.on), list: items)
-        Tops.arrayOfTops.append(newTop)
+        print(username)
+        if Tops.map[username] == nil {
+            Tops.map[username] = [newTop]
+        } else {
+            Tops.map[username]!.append(newTop)
+        }
+        print(Tops.map[username]!)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

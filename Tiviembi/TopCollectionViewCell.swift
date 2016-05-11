@@ -12,7 +12,7 @@ class TopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categories: UILabel!
     @IBOutlet weak var title: UITextView!
 
-
+ 
 }
 
 

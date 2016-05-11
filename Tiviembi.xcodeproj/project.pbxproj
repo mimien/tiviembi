@@ -17,6 +17,7 @@
 		88681FE31CD81D3D00EC6924 /* CreateATopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88681FE21CD81D3D00EC6924 /* CreateATopViewController.swift */; };
 		886E5ECD1CD414870042EC77 /* TopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E5ECC1CD414870042EC77 /* TopsViewController.swift */; };
 		889091DB1CD343F500441BF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889091DA1CD343F500441BF6 /* ProfileViewController.swift */; };
+		889A0C711CE2692800E80136 /* CurrentTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889A0C701CE2692800E80136 /* CurrentTop.swift */; };
 		88A52F291CD7EB01003F02F5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A52F281CD7EB01003F02F5 /* Profile.storyboard */; };
 		88A52F2D1CD7EBAE003F02F5 /* Tops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A52F2B1CD7EBAE003F02F5 /* Tops.storyboard */; };
 		88A97F9E1CD92E66002E2FD9 /* DisplayTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A97F9D1CD92E66002E2FD9 /* DisplayTopViewController.swift */; };
@@ -40,6 +41,7 @@
 		88681FE21CD81D3D00EC6924 /* CreateATopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateATopViewController.swift; sourceTree = "<group>"; };
 		886E5ECC1CD414870042EC77 /* TopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopsViewController.swift; sourceTree = "<group>"; };
 		889091DA1CD343F500441BF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		889A0C701CE2692800E80136 /* CurrentTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTop.swift; sourceTree = "<group>"; };
 		88A52F281CD7EB01003F02F5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		88A52F2C1CD7EBAE003F02F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tops.storyboard; sourceTree = "<group>"; };
 		88A97F9D1CD92E66002E2FD9 /* DisplayTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTopViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				88D7683F1CD83626006186ED /* Top.swift */,
 				88B3002D1CD83E7900F69C52 /* Tops.swift */,
+				889A0C701CE2692800E80136 /* CurrentTop.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88681FE11CD7FC4E00EC6924 /* TopCollectionViewCell.swift in Sources */,
+				889A0C711CE2692800E80136 /* CurrentTop.swift in Sources */,
 				88681FE31CD81D3D00EC6924 /* CreateATopViewController.swift in Sources */,
 				88B300351CD8580D00F69C52 /* ItemTableViewCell.swift in Sources */,
 				886E5ECD1CD414870042EC77 /* TopsViewController.swift in Sources */,

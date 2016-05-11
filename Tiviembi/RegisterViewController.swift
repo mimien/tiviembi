@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "exit")
+        self.view.endEditing(true)
     }
     
     func exit() {

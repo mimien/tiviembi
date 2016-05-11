@@ -9,6 +9,5 @@
 import Foundation
 
 public class Tops {
-    static var arrayOfTops: [Top] = [example]
-    static var example = Top.init(name: "Fantasy movies and tv Shows", categories: (true, true, false, false), list: ["The Hobbit", "Narnia", "Alice in wonderland"])
+    static var map: [String: [Top]] = [String: [Top]]()
 }
