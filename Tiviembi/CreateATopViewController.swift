@@ -11,7 +11,6 @@ import Stormpath
 
 class CreateATopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
-
     @IBOutlet weak var titleNavigationItem: UINavigationItem!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var categoryPickerView: UIPickerView!
@@ -23,6 +22,8 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     var isEditMode = false
     var username: String?
     var topIndex: Int?
+    var numberArray: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,8 +41,8 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
             let top = CurrentTop(username: username!, topIndex: topIndex!)
             titleNavigationItem.title = "Edit top"
             nameTextField.text = top.get.name
+            selectedCategory = top.get.category
             categoryPickerView.selectRow(top.get.categoryIndex(), inComponent: 0, animated: false)
-            
         }
     }
     
@@ -71,7 +72,7 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -79,21 +80,26 @@ class CreateATopViewController: UIViewController, UITableViewDelegate, UITableVi
         let number = (indexPath.row + 1)
         if isEditMode {
             if let i = topIndex { if let name = username {
-                cell.itemTextField.text = Tops.map[name]![i].list[indexPath.row]
+                    cell.itemTextField.text = Tops.map[name]![i].list[indexPath.row]
                 }
             }
-        } else {
-            cell.itemTextField.placeholder = "Top \(number)"
         }
-        cell.numberLabel.text = "#" + String(number)
+        cell.numberLabel.text = "# " + String(number)
+        cell.itemTextField.placeholder = "Top " + String(number)
         return cell
     }
+//    
+//    func onTextChanged(sender: UITextField) {
+//        let cell = sender.superview! as! ItemTableViewCell
+//        let indexPath = self.topsTableView.indexPathForCell(cell)!
+//        numberArray[indexPath.row] = Int(sender.text!)!
+//    }
     
 
     @IBAction func saveTop(sender: AnyObject) {
         let paths = topsTableView.indexPathsForVisibleRows
         for path in paths! {
-            if path.item == 10 {
+            if path.item == 5 {
                 break
             }
             let cell = topsTableView.cellForRowAtIndexPath(path) as! ItemTableViewCell

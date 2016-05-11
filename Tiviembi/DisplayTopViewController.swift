@@ -23,7 +23,7 @@ class DisplayTopViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidAppear(animated: Bool) {
         nameLabel.text = top!.get.name
-        categoriesLabel.text = "\(top!.get.category)"
+        categoriesLabel.text = top!.get.category.rawValue
         listTableView.reloadData()
     }
     

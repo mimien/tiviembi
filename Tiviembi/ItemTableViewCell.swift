@@ -12,5 +12,4 @@ import UIKit
 class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var itemTextField: UITextField!
-
 }

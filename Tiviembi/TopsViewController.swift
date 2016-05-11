@@ -87,6 +87,7 @@ class TopsViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else if segue.identifier == "createTop" {
             if let nextVC = segue.destinationViewController as? CreateATopViewController {
                 nextVC.username = username
+                nextVC.isEditMode = false
             }
         }
     }

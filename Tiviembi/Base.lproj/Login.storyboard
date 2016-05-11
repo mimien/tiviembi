@@ -20,12 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Vw-Ri-hdZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Vw-Ri-hdZ">
                                 <rect key="frame" x="20" y="180" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ers-Jg-e6R">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ers-Jg-e6R">
                                 <rect key="frame" x="20" y="268" width="560" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -39,22 +39,22 @@
                                     <segue destination="ImS-2N-vtF" kind="presentation" id="TbU-fd-3LT"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5iz-0w-bGw">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5iz-0w-bGw">
                                 <rect key="frame" x="290" y="424" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHN-C5-VtI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHN-C5-VtI">
                                 <rect key="frame" x="20" y="306" width="560" height="30"/>
                                 <state key="normal" title="Reset Password"/>
                                 <connections>
                                     <action selector="resetPassword:" destination="jTf-aM-Hv9" eventType="touchUpInside" id="pGl-z1-dbE"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-4L-uvv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDd-4L-uvv">
                                 <rect key="frame" x="20" y="218" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-gR-xci">
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-gR-xci">
                                 <rect key="frame" x="150" y="64" width="300" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YCK-gR-xci" secondAttribute="height" multiplier="200:72" id="gKP-Dc-aHt"/>
@@ -80,6 +80,7 @@
                             <constraint firstItem="MHN-C5-VtI" firstAttribute="top" secondItem="ers-Jg-e6R" secondAttribute="bottom" constant="8" id="dw1-Zw-EpI"/>
                             <constraint firstItem="nO6-LK-mL2" firstAttribute="leading" secondItem="QYc-yt-e9j" secondAttribute="leadingMargin" id="fdN-kY-5wN"/>
                             <constraint firstItem="fDd-4L-uvv" firstAttribute="leading" secondItem="QYc-yt-e9j" secondAttribute="leadingMargin" id="fwf-mj-4Mm"/>
+                            <constraint firstItem="YCK-gR-xci" firstAttribute="height" secondItem="QYc-yt-e9j" secondAttribute="height" multiplier="0.15" id="gT6-qv-S5q"/>
                             <constraint firstItem="ers-Jg-e6R" firstAttribute="top" secondItem="fDd-4L-uvv" secondAttribute="bottom" constant="20" id="kAY-CT-8El"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Vw-Ri-hdZ" secondAttribute="trailing" id="kCx-c8-wNe"/>
                             <constraint firstItem="5iz-0w-bGw" firstAttribute="centerX" secondItem="QYc-yt-e9j" secondAttribute="centerX" id="khB-ia-m7G"/>
@@ -88,6 +89,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="P6G-oa-pmz"/>
                                 <exclude reference="UNy-N7-Vrp"/>
                                 <exclude reference="YgQ-jt-zm7"/>
                             </mask>
